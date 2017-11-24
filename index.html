@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Cryptocurrencies</title>
+
+		<!-- meta tags -->
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta name="description" content="Webpage about cryptocurrencies"/>
+		<meta name="author" content="M.J.B. Keizer - Technical University Eindhoven"/>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+		<link rel="stylesheet" href="css/styles.css"/>
+	</head>
+	<body>
+		<div name="header" class="container-fluid">
+			<div class="row header">
+				<h1>Cryptocurrencies</h1>
+			</div>
+		</div>
+		<div name="menu" class="container-fluid menu">
+			<div class="row">
+				<div id="day" class="col menu-col selected" onclick="changeOverview('day')">
+				<h5>Last 24 Hours</h5>
+				</div>
+				<div id="news" class="col menu-col" onclick="changeOverview('news')">
+				<h5>News</h5>
+				</div>
+			</div>
+		</div>
+		<div id="dayView" name="content" class="container-fluid">
+			<div class="row big">
+				<div class="col-2 bigImageDiv">
+					<img id="BIGimage" class="bigImage" src="#" style="width: 100%">
+				</div>
+				<div class="col-8">
+					<h1 id="BIGfullName"></h1>
+					<h1><p class="price-number" id="BIGprice"></p></h1>
+					
+					</br>
+					<h3 id="BIGtextGeneral">General</h3>
+					<div class="row">
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Market Cap:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGmktcap"></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Supply:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGsupply"></h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					</br>
+					<h3 id="BIGtext24">Last 24 hours</h3>
+					<div class="row">
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Opening:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGopen24"></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Change:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGchangeColor" class="green"><p class="price-change24" id="BIGchange24pct"></p>% (<p class="price-change24" id="BIGchange24"></p>)	</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Volume:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGvolume"></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Volume in &euro;:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGvolumeEuro"></h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-2 bigImageDiv">
+					<img id="BIGimage2" class="bigImage" src="#" style="width: 100%">
+				</div>
+			</div>
+			<div class="row">
+				<div id="BTC" class="col border-big price" onclick="makeBig('BTC')">
+					<h3>BTC</h3>
+					<h4 id="BTCchangeColor" class="green"><p class="price-change24" id="BTCchange24pct"></p>% (<p class="price-change24" id="BTCchange24"></p>)</h4>
+					<h4><p class="price-number" id="BTCprice"></p></h4>
+				</div>
+				<div id="ETH" class="col border-big price" onclick="makeBig('ETH')">
+					<h3>ETH</h3>
+					<h4 id="ETHchangeColor" class="green"><p class="price-change24" id="ETHchange24pct"></p>% (<p class="price-change24" id="ETHchange24"></p>)</h4>
+					<h4><p class="price-number" id="ETHprice"></p></h4>
+				</div>
+				<div id="BCH" class="col border-big price" onclick="makeBig('BCH')">
+					<h3>BCH</h3>
+					<h4 id="BCHchangeColor" class="green"><p class="price-change24" id="BCHchange24pct"></p>% (<p class="price-change24" id="BCHchange24"></p>)</h4>
+					<h4><p class="price-number" id="BCHprice"></p></h4>
+				</div>
+			</div>
+			<div class="row">
+				<div id="XRP" class="col border-big price" onclick="makeBig('XRP')">
+					<h3>XRP</h3>
+					<h4 id="XRPchangeColor" class="green"><p class="price-change24" id="XRPchange24pct"></p>% (<p class="price-change24" id="XRPchange24"></p>)</h4>
+					<h4><p class="price-number" id="XRPprice"></p></h4>
+				</div>
+				<div id="LTC" class="col border-big price" onclick="makeBig('LTC')">
+					<h3>LTC</h3>
+					<h4 id="LTCchangeColor" class="green"><p class="price-change24" id="LTCchange24pct"></p>% (<p class="price-change24" id="LTCchange24"></p>)</h4>
+					<h4><p class="price-number" id="LTCprice"></p></h4>
+				</div>
+				<div id="DASH" class="col border-big price" onclick="makeBig('DASH')">
+					<h3>DASH</h3>
+					<h4 id="DASHchangeColor" class="green"><p class="price-change24" id="DASHchange24pct"></p>% (<p class="price-change24" id="DASHchange24"></p>)</h4>
+					<h4><p class="price-number" id="DASHprice"></p></h4>
+				</div>
+			</div>
+			<div class="row">
+				<div id="XEM" class="col border-big price" onclick="makeBig('XEM')">
+					<h3>XEM</h3>
+					<h4 id="XEMchangeColor" class="green"><p class="price-change24" id="XEMchange24pct"></p>% (<p class="price-change24" id="XEMchange24"></p>)</h4>
+					<h4><p class="price-number" id="XEMprice"></p></h4>
+				</div>
+				<div id="NEO" class="col border-big price" onclick="makeBig('NEO')">
+					<h3>NEO</h3>
+					<h4 id="NEOchangeColor" class="green"><p class="price-change24" id="NEOchange24pct"></p>% (<p class="price-change24" id="NEOchange24"></p>)</h4>
+					<h4><p class="price-number" id="NEOprice"></p></h4>
+				</div>
+				<div id="XMR" class="col border-big price" onclick="makeBig('XMR')">
+					<h3>XMR</h3>
+					<h4 id="XMRchangeColor" class="green"><p class="price-change24" id="XMRchange24pct"></p>% (<p class="price-change24" id="XMRchange24"></p>)</h4>
+					<h4><p class="price-number" id="XMRprice"></p></h4>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		<div id="newsView" name="content" class="container-fluid" style="display:none">
+			<div class="row">
+				<div id='newsBlock0' class="col border-big news" onclick="">
+					<h5 id="title0"></h5>
+					<img id="picture0" class="news-picture" src="#">
+					<p id="info0" class="author"></p>
+					<p id="description0"></p>
+				</div>
+				<div id='newsBlock1' class="col border-big news" onclick="">
+					<h5 id="title1"></h5>
+					<img id="picture1" class="news-picture" src="#">
+					<p id="info1" class="author"></p>
+					<p id="description1"></p>
+					<p id="info1"></p>
+				</div>
+				<div id='newsBlock2' class="col border-big news" onclick="">
+					<h5 id="title2"></h5>
+					<img id="picture2" class="news-picture" src="#">
+					<p id="info2" class="author"></p>
+					<p id="description2"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div id='newsBlock3' class="col border-big news" onclick="">
+					<h5 id="title3"></h5>
+					<img id="picture3" class="news-picture" src="#">
+					<p id="info3" class="author"></p>
+					<p id="description3"></p>
+				</div>
+				<div id='newsBlock4' class="col border-big news" onclick="">
+					<h5 id="title4"></h5>
+					<img id="picture4" class="news-picture" src="#">
+					<p id="info4" class="author"></p>
+					<p id="description4"></p>
+				</div>
+				<div id='newsBlock5' class="col border-big news" onclick="">
+					<h5 id="title5"></h5>
+					<img id="picture5" class="news-picture" src="#">
+					<p id="info5" class="author"></p>
+					<p id="description5"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div id='newsBlock6' class="col border-big news" onclick="">
+					<h5 id="title6"></h5>
+					<img id="picture6" class="news-picture" src="#">
+					<p id="info6" class="author"></p>
+					<p id="description6"></p>
+				</div>
+				<div id='newsBlock7' class="col border-big news" onclick="">
+					<h5 id="title7"></h5>
+					<img id="picture7" class="news-picture" src="#">
+					<p id="info7" class="author"></p>
+					<p id="description7"></p>
+				</div>
+				<div id='newsBlock8' class="col border-big news" onclick="">
+					<h5 id="title8"></h5>
+					<img id="picture8" class="news-picture" src="#">
+					<p id="info8" class="author"></p>
+					<p id="description8"></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		<script src="JavaScript/scripts.js"></script>
+	</body>
+</html>
