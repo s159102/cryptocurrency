@@ -114,7 +114,6 @@ function makeBig(currency){
 	} else {
 		document.getElementById("BIGchangeColor").className = "green";
 	}
-	window.scrollTo(0, 0);
 }
 
 function changeOverview(type){
