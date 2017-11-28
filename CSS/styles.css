@@ -33,7 +33,6 @@ body{
 	text-align: center;
 }
 .header {
-	display: block;
 	color: white;
 	text-align: center;
 	background-color: #0667d0;
@@ -105,7 +104,16 @@ a{
 .inline{
 	display:inline;
 }
-
+.output{
+	margin: 2px;
+}
+.outputImage{
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	display: inline;
+	cursor: pointer;
+}
 .bigcol{
 	padding: 0px;
 	text-align: left;

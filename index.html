@@ -16,7 +16,25 @@
 	<body>
 		<div name="header" class="container-fluid">
 			<div class="row header">
-				<h1>Cryptocurrencies</h1>
+				<div class="col-2" style="text-align: left;">
+					<div class="row">
+						<div style="cursor: pointer;" onclick="changeOutput('EUR')">
+							<img id="imgEUR" src="Files/EUR.png" class="outputImage"></img>
+							<p id="textEUR" class="output" style="display: inline;">EUR</p>
+						</div>
+					</div>
+					<div class="row" class="output">
+						<div style="cursor: pointer;" onclick="changeOutput('USD')">
+							<img id="imgUSD" src="Files/USD.png" class="outputImage"></img>
+							<p id="textUSD" class="output" style="display: inline;">USD</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-8">
+					<h1>Cryptocurrencies</h1>
+				</div>
+				<div class="col-2">
+				</div>
 			</div>
 		</div>
 		<div name="menu" class="container-fluid menu">
@@ -101,7 +119,7 @@
 						<div class="col bigcol">
 							<div class="row">
 								<div class="col">
-									<h4><b>Volume in &euro;:&nbsp;</b></h4>
+									<h4><b>Volume in <p id="in" style="display: inline">&euro;</p>:&nbsp;</b></h4>
 								</div>
 								<div class="col">
 									<h4 id="BIGvolumeEuro"></h4>
@@ -115,7 +133,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div id="BTC" class="col border-big price" onclick="makeBig('BTC'); window.scrollTo(0, 0);">
+				<div id="BTC" class="col border-big price" onclick="makeBig('BTC');	window.scrollTo(0, 0);">
 					<h3>BTC</h3>
 					<h4 id="BTCchangeColor" class="green"><p class="price-change24" id="BTCchange24pct"></p>% (<p class="price-change24" id="BTCchange24"></p>)</h4>
 					<h4><p class="price-number" id="BTCprice"></p></h4>

@@ -12,7 +12,7 @@ var currencies = {
 	}
 
 var oldBig; //Stores the currency that is currently highlighted
-
+var output = "EUR";
 $(document).ready(function(){
 	getPrices();	//Get cryptocurrency price data
 	oldBig = "BTC";	//Set a start value for oldBig (not used)
@@ -29,22 +29,22 @@ function getPrice(currency){
 	$.ajax({
         type       : "GET",
         url        : "https://min-api.cryptocompare.com/data/pricemultifull",
-        data       : {fsyms : currency, tsyms : 'EUR'},
+        data       : {fsyms : currency, tsyms : output},
         success    : function(response) {		
 			
 			//Store data
-			currencies[currency]['PRICE'] = changeNotation(response['DISPLAY'][currency]['EUR']["PRICE"]);
-			currencies[currency]['CHANGE24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["CHANGE24HOUR"]);
-			currencies[currency]['CHANGEPCT24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["CHANGEPCT24HOUR"]);
-			currencies[currency]['OPEN24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["OPEN24HOUR"]);
-			currencies[currency]['HIGH24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["HIGH24HOUR"]);
-			currencies[currency]['LOW24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["LOW24HOUR"]);
-			currencies[currency]['VOLUME24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["VOLUME24HOUR"]);
-			currencies[currency]['VOLUME24HOURTO'] = changeNotation(response['DISPLAY'][currency]['EUR']["VOLUME24HOURTO"]);
-			currencies[currency]['TOTALVOLUME24H'] = changeNotation(response['DISPLAY'][currency]['EUR']["TOTALVOLUME24H"]);
-			currencies[currency]['TOTALVOLUME24HTO'] = changeNotation(response['DISPLAY'][currency]['EUR']["TOTALVOLUME24HTO"]);
-			currencies[currency]['MKTCAP'] = changeNotation(response['DISPLAY'][currency]['EUR']["MKTCAP"]);
-			currencies[currency]['SUPPLY'] = changeNotation(response['DISPLAY'][currency]['EUR']["SUPPLY"]);
+			currencies[currency]['PRICE'] = changeNotation(response['DISPLAY'][currency][output]["PRICE"]);
+			currencies[currency]['CHANGE24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["CHANGE24HOUR"]);
+			currencies[currency]['CHANGEPCT24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["CHANGEPCT24HOUR"]);
+			currencies[currency]['OPEN24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["OPEN24HOUR"]);
+			currencies[currency]['HIGH24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["HIGH24HOUR"]);
+			currencies[currency]['LOW24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["LOW24HOUR"]);
+			currencies[currency]['VOLUME24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["VOLUME24HOUR"]);
+			currencies[currency]['VOLUME24HOURTO'] = changeNotation(response['DISPLAY'][currency][output]["VOLUME24HOURTO"]);
+			currencies[currency]['TOTALVOLUME24H'] = changeNotation(response['DISPLAY'][currency][output]["TOTALVOLUME24H"]);
+			currencies[currency]['TOTALVOLUME24HTO'] = changeNotation(response['DISPLAY'][currency][output]["TOTALVOLUME24HTO"]);
+			currencies[currency]['MKTCAP'] = changeNotation(response['DISPLAY'][currency][output]["MKTCAP"]);
+			currencies[currency]['SUPPLY'] = changeNotation(response['DISPLAY'][currency][output]["SUPPLY"]);
 			
 			//Update data on screen for the smaller div
 			document.getElementById(currency+"price").innerHTML = currencies[currency]["PRICE"];
@@ -157,11 +157,23 @@ function getNews(){
 function changeNotation(data){
 	var string = data;
 	
-	string = string.replace(/[,.]/g, function (m) {
-		// m is the match found in the string
-		// If `,` is matched return `.`, if `.` matched return `,`
-		return m === ',' ? '.' : ',';
-	});
+	if (output == "EUR"){
+		string = string.replace(/[,.]/g, function (m) {
+			// m is the match found in the string
+			// If `,` is matched return `.`, if `.` matched return `,`
+			return m === ',' ? '.' : ',';
+		});
+	}
 	
 	return string;
+}
+
+function changeOutput(to){
+	output = to;
+	if (to == "EUR"){
+		document.getElementById('in').innerHTML = "&euro;";
+	} else {
+		document.getElementById('in').innerHTML = "&#36;";
+	}
+	getPrices();
 }
