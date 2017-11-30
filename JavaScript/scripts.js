@@ -31,7 +31,6 @@ function getPrice(currency){
         url        : "https://min-api.cryptocompare.com/data/pricemultifull",
         data       : {fsyms : currency, tsyms : output},
         success    : function(response) {		
-			
 			//Store data
 			currencies[currency]['PRICE'] = changeNotation(response['DISPLAY'][currency][output]["PRICE"]);
 			currencies[currency]['CHANGE24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["CHANGE24HOUR"]);
@@ -138,18 +137,25 @@ function getNews(){
         success    : function(response) {
 			if (response['status'] == 'ok'){
 				articles = response['articles'];
-				for (var i = 0; i < articles.length - 1; i++){
+				for (var i = 0; i < 9; i++){
 					article = articles[i];
 					document.getElementById('title'+i).innerHTML = article['title'];
-					document.getElementById('picture'+i).src = article['urlToImage'];
+					//document.getElementById('picture'+i).src = article['urlToImage'];
 					document.getElementById('description'+i).innerHTML = article['description'];
 					document.getElementById('info'+i).innerHTML = article['author'];
 					document.getElementById('newsBlock'+i).setAttribute( "onClick", "window.location.href = '"+article['url']+"';" );
+					
+					var img = $('<img />', {src : article['urlToImage'], class: "news-picture"});
+					img.appendTo(document.getElementById('picture'+i));
+
 				}
+			} else {
+				console.log("Not able to get the News! Response status: ".response['status']);
 			}
         },
-        error      : function() {
+        error      : function(request, status, error) {
 			console.log("Unable to retrieve news");
+			console.log(request.responseText);
         }
     });     
 }
