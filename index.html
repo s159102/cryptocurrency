@@ -16,13 +16,31 @@
 	<body>
 		<div name="header" class="container-fluid">
 			<div class="row header">
-				<h1>Cryptocurrencies</h1>
+				<div id="changeOutput" class="col-2" style="text-align: left;">
+					<div class="row">
+						<div style="cursor: pointer;" onclick="changeOutput('EUR')">
+							<img id="imgEUR" src="Files/EUR.png" class="outputImage"></img>
+							<p id="textEUR" class="output" style="display: inline;">EUR</p>
+						</div>
+					</div>
+					<div class="row" class="output">
+						<div style="cursor: pointer;" onclick="changeOutput('USD')">
+							<img id="imgUSD" src="Files/USD.png" class="outputImage"></img>
+							<p id="textUSD" class="output" style="display: inline;">USD</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-8">
+					<h1 id="head">Cryptocurrencies</h1>
+				</div>
+				<div class="col-2">
+				</div>
 			</div>
 		</div>
 		<div name="menu" class="container-fluid menu">
 			<div class="row">
 				<div id="day" class="col menu-col selected" onclick="changeOverview('day')">
-				<h5>Last 24 Hours</h5>
+				<h5>24 Hours</h5>
 				</div>
 				<div id="news" class="col menu-col" onclick="changeOverview('news')">
 				<h5>News</h5>
@@ -62,9 +80,31 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Website:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGwebsite"></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Max-supply:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGmaxSupply"></h4>
+								</div>
+							</div>
+						</div>
+					</div>
 					
 					</br>
-					<h3 id="BIGtext24">Last 24 hours</h3>
+					<h3 id="BIGtext24">24 hours</h3>
 					<div class="row">
 						<div class="col bigcol">
 							<div class="row">
@@ -101,7 +141,7 @@
 						<div class="col bigcol">
 							<div class="row">
 								<div class="col">
-									<h4><b>Volume in &euro;:&nbsp;</b></h4>
+									<h4><b>Volume in <p id="in" style="display: inline">&euro;</p>:&nbsp;</b></h4>
 								</div>
 								<div class="col">
 									<h4 id="BIGvolumeEuro"></h4>
@@ -115,51 +155,51 @@
 				</div>
 			</div>
 			<div class="row">
-				<div id="BTC" class="col border-big price" onclick="makeBig('BTC')">
+				<div id="BTC" class="col border-big price" onclick="makeBig('BTC');	window.scrollTo(0, 0);">
 					<h3>BTC</h3>
 					<h4 id="BTCchangeColor" class="green"><p class="price-change24" id="BTCchange24pct"></p>% (<p class="price-change24" id="BTCchange24"></p>)</h4>
 					<h4><p class="price-number" id="BTCprice"></p></h4>
 				</div>
-				<div id="ETH" class="col border-big price" onclick="makeBig('ETH')">
+				<div id="ETH" class="col border-big price" onclick="makeBig('ETH'); window.scrollTo(0, 0);">
 					<h3>ETH</h3>
 					<h4 id="ETHchangeColor" class="green"><p class="price-change24" id="ETHchange24pct"></p>% (<p class="price-change24" id="ETHchange24"></p>)</h4>
 					<h4><p class="price-number" id="ETHprice"></p></h4>
 				</div>
-				<div id="BCH" class="col border-big price" onclick="makeBig('BCH')">
+				<div id="BCH" class="col border-big price" onclick="makeBig('BCH'); window.scrollTo(0, 0);">
 					<h3>BCH</h3>
 					<h4 id="BCHchangeColor" class="green"><p class="price-change24" id="BCHchange24pct"></p>% (<p class="price-change24" id="BCHchange24"></p>)</h4>
 					<h4><p class="price-number" id="BCHprice"></p></h4>
 				</div>
 			</div>
 			<div class="row">
-				<div id="XRP" class="col border-big price" onclick="makeBig('XRP')">
+				<div id="XRP" class="col border-big price" onclick="makeBig('XRP'); window.scrollTo(0, 0);">
 					<h3>XRP</h3>
 					<h4 id="XRPchangeColor" class="green"><p class="price-change24" id="XRPchange24pct"></p>% (<p class="price-change24" id="XRPchange24"></p>)</h4>
 					<h4><p class="price-number" id="XRPprice"></p></h4>
 				</div>
-				<div id="LTC" class="col border-big price" onclick="makeBig('LTC')">
+				<div id="LTC" class="col border-big price" onclick="makeBig('LTC'); window.scrollTo(0, 0);">
 					<h3>LTC</h3>
 					<h4 id="LTCchangeColor" class="green"><p class="price-change24" id="LTCchange24pct"></p>% (<p class="price-change24" id="LTCchange24"></p>)</h4>
 					<h4><p class="price-number" id="LTCprice"></p></h4>
 				</div>
-				<div id="DASH" class="col border-big price" onclick="makeBig('DASH')">
+				<div id="DASH" class="col border-big price" onclick="makeBig('DASH'); window.scrollTo(0, 0);">
 					<h3>DASH</h3>
 					<h4 id="DASHchangeColor" class="green"><p class="price-change24" id="DASHchange24pct"></p>% (<p class="price-change24" id="DASHchange24"></p>)</h4>
 					<h4><p class="price-number" id="DASHprice"></p></h4>
 				</div>
 			</div>
 			<div class="row">
-				<div id="XEM" class="col border-big price" onclick="makeBig('XEM')">
+				<div id="XEM" class="col border-big price" onclick="makeBig('XEM'); window.scrollTo(0, 0);">
 					<h3>XEM</h3>
 					<h4 id="XEMchangeColor" class="green"><p class="price-change24" id="XEMchange24pct"></p>% (<p class="price-change24" id="XEMchange24"></p>)</h4>
 					<h4><p class="price-number" id="XEMprice"></p></h4>
 				</div>
-				<div id="NEO" class="col border-big price" onclick="makeBig('NEO')">
+				<div id="NEO" class="col border-big price" onclick="makeBig('NEO'); window.scrollTo(0, 0);">
 					<h3>NEO</h3>
 					<h4 id="NEOchangeColor" class="green"><p class="price-change24" id="NEOchange24pct"></p>% (<p class="price-change24" id="NEOchange24"></p>)</h4>
 					<h4><p class="price-number" id="NEOprice"></p></h4>
 				</div>
-				<div id="XMR" class="col border-big price" onclick="makeBig('XMR')">
+				<div id="XMR" class="col border-big price" onclick="makeBig('XMR'); window.scrollTo(0, 0);">
 					<h3>XMR</h3>
 					<h4 id="XMRchangeColor" class="green"><p class="price-change24" id="XMRchange24pct"></p>% (<p class="price-change24" id="XMRchange24"></p>)</h4>
 					<h4><p class="price-number" id="XMRprice"></p></h4>
@@ -174,20 +214,20 @@
 			<div class="row">
 				<div id='newsBlock0' class="col border-big news" onclick="">
 					<h5 id="title0"></h5>
-					<img id="picture0" class="news-picture" src="#">
+					<div id="picture0" class="news-picture" ></div>
 					<p id="info0" class="author"></p>
 					<p id="description0"></p>
 				</div>
 				<div id='newsBlock1' class="col border-big news" onclick="">
 					<h5 id="title1"></h5>
-					<img id="picture1" class="news-picture" src="#">
+					<div id="picture1" class="news-picture" ></div>
 					<p id="info1" class="author"></p>
 					<p id="description1"></p>
 					<p id="info1"></p>
 				</div>
 				<div id='newsBlock2' class="col border-big news" onclick="">
 					<h5 id="title2"></h5>
-					<img id="picture2" class="news-picture" src="#">
+					<div id="picture2" class="news-picture" ></div>
 					<p id="info2" class="author"></p>
 					<p id="description2"></p>
 				</div>
@@ -195,19 +235,19 @@
 			<div class="row">
 				<div id='newsBlock3' class="col border-big news" onclick="">
 					<h5 id="title3"></h5>
-					<img id="picture3" class="news-picture" src="#">
+					<div id="picture3" class="news-picture" ></div>
 					<p id="info3" class="author"></p>
 					<p id="description3"></p>
 				</div>
 				<div id='newsBlock4' class="col border-big news" onclick="">
 					<h5 id="title4"></h5>
-					<img id="picture4" class="news-picture" src="#">
+					<div id="picture4" class="news-picture" ></div>
 					<p id="info4" class="author"></p>
 					<p id="description4"></p>
 				</div>
 				<div id='newsBlock5' class="col border-big news" onclick="">
 					<h5 id="title5"></h5>
-					<img id="picture5" class="news-picture" src="#">
+					<div id="picture5" class="news-picture" ></div>
 					<p id="info5" class="author"></p>
 					<p id="description5"></p>
 				</div>
@@ -215,19 +255,19 @@
 			<div class="row">
 				<div id='newsBlock6' class="col border-big news" onclick="">
 					<h5 id="title6"></h5>
-					<img id="picture6" class="news-picture" src="#">
+					<div id="picture6" class="news-picture" ></div>
 					<p id="info6" class="author"></p>
 					<p id="description6"></p>
 				</div>
 				<div id='newsBlock7' class="col border-big news" onclick="">
 					<h5 id="title7"></h5>
-					<img id="picture7" class="news-picture" src="#">
+					<div id="picture7" class="news-picture" ></div>
 					<p id="info7" class="author"></p>
 					<p id="description7"></p>
 				</div>
 				<div id='newsBlock8' class="col border-big news" onclick="">
 					<h5 id="title8"></h5>
-					<img id="picture8" class="news-picture" src="#">
+					<div id="picture8" class="news-picture" ></div>
 					<p id="info8" class="author"></p>
 					<p id="description8"></p>
 				</div>

@@ -1,8 +1,13 @@
 body{
 	background-color: #f4f7fa;
 	color: #4E5C6E;
+	min-width: 320px;
 }
 .col{
+	text-align: center;
+	margin: 4px;
+}
+.col-{
 	text-align: center;
 	margin: 4px;
 }
@@ -29,7 +34,6 @@ body{
 	text-align: center;
 }
 .header {
-	display: block;
 	color: white;
 	text-align: center;
 	background-color: #0667d0;
@@ -75,12 +79,13 @@ a{
 	color: red;
 }
 .news-picture{
-	max-width: 90%;
+	max-width: 100%;
 }
 .news{
 	background-color: #fff;
 	cursor: pointer;
 	padding: 15px;
+	min-width: 250px;
 }
 .news:hover{
 	border: 3px solid #d4dcea;
@@ -101,7 +106,16 @@ a{
 .inline{
 	display:inline;
 }
-
+.output{
+	margin: 2px;
+}
+.outputImage{
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	display: inline;
+	cursor: pointer;
+}
 .bigcol{
 	padding: 0px;
 	text-align: left;

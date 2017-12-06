@@ -1,19 +1,24 @@
 //This object stores all data that we get from cryptocompare.com
 var currencies = {
-	BTC: {FULLNAME: "Bitcoin", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	ETH: {FULLNAME: "Ethereum", COLOR: "#343535", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	BCH: {FULLNAME: "Bitcoin Cash", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	XRP: {FULLNAME: "Ripple", COLOR: "#0098d2", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	LTC: {FULLNAME: "Litecoin", COLOR: "#b6b7ba", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	DASH: {FULLNAME: "Dash", COLOR: "#1c75bc", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	XEM: {FULLNAME: "NEM", COLOR: "#000000", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	NEO: {FULLNAME: "NEO", COLOR: "#58bf00", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	XMR: {FULLNAME: "Monero", COLOR: "#ff6600", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"}
+	BTC: {FULLNAME: "Bitcoin", MAXSUPPLY: "Ƀ 21,000,000.0", WEBSITE: "Bitcoin.org", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	ETH: {FULLNAME: "Ethereum", MAXSUPPLY: "unknown", WEBSITE: "Ethereum.org", COLOR: "#343535", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	BCH: {FULLNAME: "Bitcoin Cash", MAXSUPPLY: "BCH 21,000,000.0", WEBSITE: "Bitcoincash.org", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	XRP: {FULLNAME: "Ripple", MAXSUPPLY: "XRP 99,993,093,880.0", WEBSITE: "Ripple.com", COLOR: "#0098d2", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	LTC: {FULLNAME: "Litecoin", MAXSUPPLY: "Ł 84,000,000.0", WEBSITE: "Litecoin.com", COLOR: "#b6b7ba", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	DASH: {FULLNAME: "Dash", MAXSUPPLY: "DASH 18,900,000.0", WEBSITE: "Dash.org", COLOR: "#1c75bc", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	XEM: {FULLNAME: "NEM", MAXSUPPLY: "unknown", WEBSITE: "Nem.io", COLOR: "#000000", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	NEO: {FULLNAME: "NEO", MAXSUPPLY: "NEO 100,000,000.0", WEBSITE: "Neo.org", COLOR: "#58bf00", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	XMR: {FULLNAME: "Monero", MAXSUPPLY: "unknown", WEBSITE: "Monero.cc", COLOR: "#ff6600", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"}
 	}
 
 var oldBig; //Stores the currency that is currently highlighted
-
+var output = "EUR";
 $(document).ready(function(){
+	if ($(window).width() < 450) {
+		document.getElementById('head').innerHTML = "Crypto- currencies";
+	} else {
+		document.getElementById('head').innerHTML = "Cryptocurrencies";
+	}
 	getPrices();	//Get cryptocurrency price data
 	oldBig = "BTC";	//Set a start value for oldBig (not used)
 	getNews();		//Get cryptocurrency news date
@@ -29,22 +34,21 @@ function getPrice(currency){
 	$.ajax({
         type       : "GET",
         url        : "https://min-api.cryptocompare.com/data/pricemultifull",
-        data       : {fsyms : currency, tsyms : 'EUR'},
+        data       : {fsyms : currency, tsyms : output},
         success    : function(response) {		
-			
 			//Store data
-			currencies[currency]['PRICE'] = changeNotation(response['DISPLAY'][currency]['EUR']["PRICE"]);
-			currencies[currency]['CHANGE24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["CHANGE24HOUR"]);
-			currencies[currency]['CHANGEPCT24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["CHANGEPCT24HOUR"]);
-			currencies[currency]['OPEN24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["OPEN24HOUR"]);
-			currencies[currency]['HIGH24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["HIGH24HOUR"]);
-			currencies[currency]['LOW24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["LOW24HOUR"]);
-			currencies[currency]['VOLUME24HOUR'] = changeNotation(response['DISPLAY'][currency]['EUR']["VOLUME24HOUR"]);
-			currencies[currency]['VOLUME24HOURTO'] = changeNotation(response['DISPLAY'][currency]['EUR']["VOLUME24HOURTO"]);
-			currencies[currency]['TOTALVOLUME24H'] = changeNotation(response['DISPLAY'][currency]['EUR']["TOTALVOLUME24H"]);
-			currencies[currency]['TOTALVOLUME24HTO'] = changeNotation(response['DISPLAY'][currency]['EUR']["TOTALVOLUME24HTO"]);
-			currencies[currency]['MKTCAP'] = changeNotation(response['DISPLAY'][currency]['EUR']["MKTCAP"]);
-			currencies[currency]['SUPPLY'] = changeNotation(response['DISPLAY'][currency]['EUR']["SUPPLY"]);
+			currencies[currency]['PRICE'] = changeNotation(response['DISPLAY'][currency][output]["PRICE"]);
+			currencies[currency]['CHANGE24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["CHANGE24HOUR"]);
+			currencies[currency]['CHANGEPCT24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["CHANGEPCT24HOUR"]);
+			currencies[currency]['OPEN24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["OPEN24HOUR"]);
+			currencies[currency]['HIGH24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["HIGH24HOUR"]);
+			currencies[currency]['LOW24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["LOW24HOUR"]);
+			currencies[currency]['VOLUME24HOUR'] = changeNotation(response['DISPLAY'][currency][output]["VOLUME24HOUR"]);
+			currencies[currency]['VOLUME24HOURTO'] = changeNotation(response['DISPLAY'][currency][output]["VOLUME24HOURTO"]);
+			currencies[currency]['TOTALVOLUME24H'] = changeNotation(response['DISPLAY'][currency][output]["TOTALVOLUME24H"]);
+			currencies[currency]['TOTALVOLUME24HTO'] = changeNotation(response['DISPLAY'][currency][output]["TOTALVOLUME24HTO"]);
+			currencies[currency]['MKTCAP'] = changeNotation(response['DISPLAY'][currency][output]["MKTCAP"]);
+			currencies[currency]['SUPPLY'] = changeNotation(response['DISPLAY'][currency][output]["SUPPLY"]);
 			
 			//Update data on screen for the smaller div
 			document.getElementById(currency+"price").innerHTML = currencies[currency]["PRICE"];
@@ -105,6 +109,8 @@ function makeBig(currency){
 	document.getElementById("BIGvolumeEuro").innerHTML = currencies[currency]["VOLUME24HOURTO"];
 	document.getElementById("BIGmktcap").innerHTML = currencies[currency]["MKTCAP"];
 	document.getElementById("BIGsupply").innerHTML = currencies[currency]["SUPPLY"];
+	document.getElementById("BIGmaxSupply").innerHTML = changeNotation(currencies[currency]["MAXSUPPLY"]);
+	document.getElementById("BIGwebsite").innerHTML = "<a target='_blank' href='https://www."+currencies[currency]["WEBSITE"]+"'>"+currencies[currency]["WEBSITE"]+"</a>";
 	
 	$("#BIGimage").attr("src", "Files/"+currency+".png");
 	$("#BIGimage2").attr("src", "Files/"+currency+".png");
@@ -114,7 +120,6 @@ function makeBig(currency){
 	} else {
 		document.getElementById("BIGchangeColor").className = "green";
 	}
-	window.scrollTo(0, 0);
 }
 
 function changeOverview(type){
@@ -123,11 +128,13 @@ function changeOverview(type){
 		document.getElementById('day').className = "col menu-col selected";
 		document.getElementById('newsView').style.display = "none";
 		document.getElementById('dayView').style.display = "";
+		document.getElementById('changeOutput').style.visibility = "visible";
 	} else if (type == "news"){
 		document.getElementById('day').className = "col menu-col";
 		document.getElementById('news').className = "col menu-col selected";
 		document.getElementById('dayView').style.display = "none";
 		document.getElementById('newsView').style.display = "";
+		document.getElementById('changeOutput').style.visibility = "hidden";
 	}
 }
 
@@ -139,18 +146,23 @@ function getNews(){
         success    : function(response) {
 			if (response['status'] == 'ok'){
 				articles = response['articles'];
-				for (var i = 0; i < articles.length - 1; i++){
+				for (var i = 0; i < 9; i++){
 					article = articles[i];
 					document.getElementById('title'+i).innerHTML = article['title'];
-					document.getElementById('picture'+i).src = article['urlToImage'];
 					document.getElementById('description'+i).innerHTML = article['description'];
 					document.getElementById('info'+i).innerHTML = article['author'];
-					document.getElementById('newsBlock'+i).setAttribute( "onClick", "window.location.href = '"+article['url']+"';" );
+					document.getElementById('newsBlock'+i).setAttribute( "onClick", "window.open('"+article['url']+"', '_blank');" );
+					var img = $('<img />', {src : article['urlToImage'], class: "news-picture"});
+					img.appendTo(document.getElementById('picture'+i));
+
 				}
+			} else {
+				console.log("Not able to get the News! Response status: ".response['status']);
 			}
         },
-        error      : function() {
+        error      : function(request, status, error) {
 			console.log("Unable to retrieve news");
+			console.log(request.responseText);
         }
     });     
 }
@@ -158,11 +170,31 @@ function getNews(){
 function changeNotation(data){
 	var string = data;
 	
-	string = string.replace(/[,.]/g, function (m) {
-		// m is the match found in the string
-		// If `,` is matched return `.`, if `.` matched return `,`
-		return m === ',' ? '.' : ',';
-	});
+	if (output == "EUR"){
+		string = string.replace(/[,.]/g, function (m) {
+			// m is the match found in the string
+			// If `,` is matched return `.`, if `.` matched return `,`
+			return m === ',' ? '.' : ',';
+		});
+	}
 	
 	return string;
 }
+
+function changeOutput(to){
+	output = to;
+	if (to == "EUR"){
+		document.getElementById('in').innerHTML = "&euro;";
+	} else {
+		document.getElementById('in').innerHTML = "&#36;";
+	}
+	getPrices();
+}
+
+$(window).resize(function() {
+	if ($(window).width() < 450) {
+		document.getElementById('head').innerHTML = "Crypto- currencies";
+	} else {
+		document.getElementById('head').innerHTML = "Cryptocurrencies";
+	}
+});
