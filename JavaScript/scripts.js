@@ -13,11 +13,19 @@ var currencies = {
 
 var oldBig; //Stores the currency that is currently highlighted
 var output = "EUR";
+var page = 1;
+var extraUSD = 0;
 $(document).ready(function(){
 	if ($(window).width() < 450) {
-		document.getElementById('head').innerHTML = "Crypto- currencies";
+		document.getElementById('head').style.fontSize = "1.5rem";
+		document.getElementById('extraUSD').style.visibility = "visible";
+		document.getElementById('USD').style.visibility = "hidden"
+		extraUSD = 1;
 	} else {
-		document.getElementById('head').innerHTML = "Cryptocurrencies";
+		document.getElementById('head').style.fontSize = "2.5rem";
+		document.getElementById('extraUSD').style.visibility = "hidden";
+		document.getElementById('USD').style.visibility = "visible";
+		extraUSD = 0;
 	}
 	getPrices();	//Get cryptocurrency price data
 	oldBig = "BTC";	//Set a start value for oldBig (not used)
@@ -124,17 +132,26 @@ function makeBig(currency){
 
 function changeOverview(type){
 	if (type == "day"){
+		page = 1;
 		document.getElementById('news').className = "col menu-col";
 		document.getElementById('day').className = "col menu-col selected";
 		document.getElementById('newsView').style.display = "none";
 		document.getElementById('dayView').style.display = "";
 		document.getElementById('changeOutput').style.visibility = "visible";
+		if (extraUSD == 1){
+			document.getElementById('extraUSD').style.visibility = "visible";
+		} else {
+			document.getElementById('USD').style.visibility = "visible";
+		}
 	} else if (type == "news"){
+		page = 0;
 		document.getElementById('day').className = "col menu-col";
 		document.getElementById('news').className = "col menu-col selected";
 		document.getElementById('dayView').style.display = "none";
 		document.getElementById('newsView').style.display = "";
 		document.getElementById('changeOutput').style.visibility = "hidden";
+		document.getElementById('extraUSD').style.visibility = "hidden";
+		document.getElementById('USD').style.visibility = "hidden";
 	}
 }
 
@@ -193,8 +210,18 @@ function changeOutput(to){
 
 $(window).resize(function() {
 	if ($(window).width() < 450) {
-		document.getElementById('head').innerHTML = "Crypto- currencies";
+		document.getElementById('head').style.fontSize = "1.5rem";
+		extraUSD = 1;
+		if (page == 1){
+			document.getElementById('extraUSD').style.visibility = "visible";
+			document.getElementById('USD').style.visibility = "hidden"
+		}
 	} else {
-		document.getElementById('head').innerHTML = "Cryptocurrencies";
+		document.getElementById('head').style.fontSize = "2.5rem";
+		extraUSD = 0;
+		if (page == 1){
+			document.getElementById('extraUSD').style.visibility = "hidden";
+			document.getElementById('USD').style.visibility = "visible";
+		}
 	}
 });

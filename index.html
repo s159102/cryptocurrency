@@ -16,14 +16,14 @@
 	<body>
 		<div name="header" class="container-fluid">
 			<div class="row header">
-				<div id="changeOutput" class="col-2" style="text-align: left;">
+				<div id="changeOutput" class="col-2" style="text-align: left; height: 50px;">
 					<div class="row">
 						<div style="cursor: pointer;" onclick="changeOutput('EUR')">
 							<img id="imgEUR" src="Files/EUR.png" class="outputImage"></img>
 							<p id="textEUR" class="output" style="display: inline;">EUR</p>
 						</div>
 					</div>
-					<div class="row" class="output">
+					<div id="USD" class="row">
 						<div style="cursor: pointer;" onclick="changeOutput('USD')">
 							<img id="imgUSD" src="Files/USD.png" class="outputImage"></img>
 							<p id="textUSD" class="output" style="display: inline;">USD</p>
@@ -33,7 +33,13 @@
 				<div class="col-8">
 					<h1 id="head">Cryptocurrencies</h1>
 				</div>
-				<div class="col-2">
+				<div id="changeOutput2" class="col-2" style="height: 50px;">
+					<div id="extraUSD" class="row" style="visibility: hidden">
+						<div style="cursor: pointer;" onclick="changeOutput('USD')">
+							<img id="imgUSD" src="Files/USD.png" class="outputImage"></img>
+							<p id="textUSD" class="output" style="display: inline;">USD</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
