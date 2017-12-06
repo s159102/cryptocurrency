@@ -1,19 +1,24 @@
 //This object stores all data that we get from cryptocompare.com
 var currencies = {
-	BTC: {FULLNAME: "Bitcoin", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	ETH: {FULLNAME: "Ethereum", COLOR: "#343535", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	BCH: {FULLNAME: "Bitcoin Cash", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	XRP: {FULLNAME: "Ripple", COLOR: "#0098d2", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	LTC: {FULLNAME: "Litecoin", COLOR: "#b6b7ba", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	DASH: {FULLNAME: "Dash", COLOR: "#1c75bc", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	XEM: {FULLNAME: "NEM", COLOR: "#000000", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	NEO: {FULLNAME: "NEO", COLOR: "#58bf00", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
-	XMR: {FULLNAME: "Monero", COLOR: "#ff6600", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"}
+	BTC: {FULLNAME: "Bitcoin", MAXSUPPLY: "Ƀ 21,000,000.0", WEBSITE: "Bitcoin.org", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	ETH: {FULLNAME: "Ethereum", MAXSUPPLY: "unknown", WEBSITE: "Ethereum.org", COLOR: "#343535", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	BCH: {FULLNAME: "Bitcoin Cash", MAXSUPPLY: "BCH 21,000,000.0", WEBSITE: "Bitcoincash.org", COLOR: "#f7931a", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	XRP: {FULLNAME: "Ripple", MAXSUPPLY: "XRP 99,993,093,880.0", WEBSITE: "Ripple.com", COLOR: "#0098d2", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	LTC: {FULLNAME: "Litecoin", MAXSUPPLY: "Ł 84,000,000.0", WEBSITE: "Litecoin.com", COLOR: "#b6b7ba", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	DASH: {FULLNAME: "Dash", MAXSUPPLY: "DASH 18,900,000.0", WEBSITE: "Dash.org", COLOR: "#1c75bc", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	XEM: {FULLNAME: "NEM", MAXSUPPLY: "unknown", WEBSITE: "Nem.io", COLOR: "#000000", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	NEO: {FULLNAME: "NEO", MAXSUPPLY: "NEO 100,000,000.0", WEBSITE: "Neo.org", COLOR: "#58bf00", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"},
+	XMR: {FULLNAME: "Monero", MAXSUPPLY: "unknown", WEBSITE: "Monero.cc", COLOR: "#ff6600", PRICE: "?", CHANGE24HOUR: "?",  CHANGEPCT24HOUR: "?", OPEN24HOUR: "?", HIGH24HOUR: "?", LOW24HOUR: "?", VOLUME24HOUR: "?", VOLUME24HOURTO: "?", TOTALVOLUME24H: "?", TOTALVOLUME24HTO: "?", MKTCAP: "?", SUPPLY: "?"}
 	}
 
 var oldBig; //Stores the currency that is currently highlighted
 var output = "EUR";
 $(document).ready(function(){
+	if ($(window).width() < 450) {
+		document.getElementById('head').innerHTML = "Crypto- currencies";
+	} else {
+		document.getElementById('head').innerHTML = "Cryptocurrencies";
+	}
 	getPrices();	//Get cryptocurrency price data
 	oldBig = "BTC";	//Set a start value for oldBig (not used)
 	getNews();		//Get cryptocurrency news date
@@ -104,6 +109,8 @@ function makeBig(currency){
 	document.getElementById("BIGvolumeEuro").innerHTML = currencies[currency]["VOLUME24HOURTO"];
 	document.getElementById("BIGmktcap").innerHTML = currencies[currency]["MKTCAP"];
 	document.getElementById("BIGsupply").innerHTML = currencies[currency]["SUPPLY"];
+	document.getElementById("BIGmaxSupply").innerHTML = changeNotation(currencies[currency]["MAXSUPPLY"]);
+	document.getElementById("BIGwebsite").innerHTML = "<a target='_blank' href='https://www."+currencies[currency]["WEBSITE"]+"'>"+currencies[currency]["WEBSITE"]+"</a>";
 	
 	$("#BIGimage").attr("src", "Files/"+currency+".png");
 	$("#BIGimage2").attr("src", "Files/"+currency+".png");
@@ -121,11 +128,13 @@ function changeOverview(type){
 		document.getElementById('day').className = "col menu-col selected";
 		document.getElementById('newsView').style.display = "none";
 		document.getElementById('dayView').style.display = "";
+		document.getElementById('changeOutput').style.visibility = "visible";
 	} else if (type == "news"){
 		document.getElementById('day').className = "col menu-col";
 		document.getElementById('news').className = "col menu-col selected";
 		document.getElementById('dayView').style.display = "none";
 		document.getElementById('newsView').style.display = "";
+		document.getElementById('changeOutput').style.visibility = "hidden";
 	}
 }
 
@@ -140,11 +149,9 @@ function getNews(){
 				for (var i = 0; i < 9; i++){
 					article = articles[i];
 					document.getElementById('title'+i).innerHTML = article['title'];
-					//document.getElementById('picture'+i).src = article['urlToImage'];
 					document.getElementById('description'+i).innerHTML = article['description'];
 					document.getElementById('info'+i).innerHTML = article['author'];
-					document.getElementById('newsBlock'+i).setAttribute( "onClick", "window.location.href = '"+article['url']+"';" );
-					
+					document.getElementById('newsBlock'+i).setAttribute( "onClick", "window.open('"+article['url']+"', '_blank');" );
 					var img = $('<img />', {src : article['urlToImage'], class: "news-picture"});
 					img.appendTo(document.getElementById('picture'+i));
 
@@ -183,3 +190,11 @@ function changeOutput(to){
 	}
 	getPrices();
 }
+
+$(window).resize(function() {
+	if ($(window).width() < 450) {
+		document.getElementById('head').innerHTML = "Crypto- currencies";
+	} else {
+		document.getElementById('head').innerHTML = "Cryptocurrencies";
+	}
+});

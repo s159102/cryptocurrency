@@ -16,7 +16,7 @@
 	<body>
 		<div name="header" class="container-fluid">
 			<div class="row header">
-				<div class="col-2" style="text-align: left;">
+				<div id="changeOutput" class="col-2" style="text-align: left;">
 					<div class="row">
 						<div style="cursor: pointer;" onclick="changeOutput('EUR')">
 							<img id="imgEUR" src="Files/EUR.png" class="outputImage"></img>
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 				<div class="col-8">
-					<h1>Cryptocurrencies</h1>
+					<h1 id="head">Cryptocurrencies</h1>
 				</div>
 				<div class="col-2">
 				</div>
@@ -40,7 +40,7 @@
 		<div name="menu" class="container-fluid menu">
 			<div class="row">
 				<div id="day" class="col menu-col selected" onclick="changeOverview('day')">
-				<h5>Last 24 Hours</h5>
+				<h5>24 Hours</h5>
 				</div>
 				<div id="news" class="col menu-col" onclick="changeOverview('news')">
 				<h5>News</h5>
@@ -80,9 +80,31 @@
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Website:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGwebsite"></h4>
+								</div>
+							</div>
+						</div>
+						<div class="col bigcol">
+							<div class="row">
+								<div class="col">
+									<h4><b>Max-supply:&nbsp;</b></h4>
+								</div>
+								<div class="col">
+									<h4 id="BIGmaxSupply"></h4>
+								</div>
+							</div>
+						</div>
+					</div>
 					
 					</br>
-					<h3 id="BIGtext24">Last 24 hours</h3>
+					<h3 id="BIGtext24">24 hours</h3>
 					<div class="row">
 						<div class="col bigcol">
 							<div class="row">
